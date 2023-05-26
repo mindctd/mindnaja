@@ -1,3 +1,7 @@
+import 'package:eyetestapp/colblind.dart';
+import 'package:eyetestapp/long.dart';
+import 'package:eyetestapp/sepcol.dart';
+import 'package:eyetestapp/short.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -12,65 +16,144 @@ class _homemenuState extends State<homemenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: Text('menu'),
-        backgroundColor: Colors.green[700],
+        title: Text(
+          'โปรดเลือกการทดสอบที่ท่านต้องการ :',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: (Colors.green[300]),
       ),
-      backgroundColor: Colors.green[200],
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/gg.jpg"), fit: BoxFit.cover),
+        ),
         padding: EdgeInsets.all(30.0),
         child: GridView.count(
           crossAxisCount: 2,
           children: <Widget>[
-            Mymenu(
-              icon: Icons.remove_red_eye_sharp,
-              warna: Colors.orange,
+            Card(
+              color: Colors.orange[700],
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const short()),
+                  );
+                },
+                splashColor: Colors.green[700],
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(
+                        Icons.remove_red_eye_outlined,
+                        size: 70.0,
+                        color: Colors.brown,
+                      ),
+                      Text(
+                        "ตรวจภาวะสายตาสั้น",
+                        style: new TextStyle(
+                            fontSize: 12.0, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ),
-            Mymenu(
-              icon: Icons.remove_red_eye_outlined,
-              warna: Colors.purple,
+            Card(
+              color: Colors.blue,
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const long()),
+                  );
+                },
+                splashColor: Colors.green[700],
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(
+                        Icons.remove_red_eye,
+                        size: 70.0,
+                        color: Colors.purple,
+                      ),
+                      Text(
+                        "ตรวจภาวะสายตายาว",
+                        style: new TextStyle(
+                            fontSize: 12.0, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ),
-            Mymenu(
-              icon: Icons.color_lens,
-              warna: Colors.red,
+            Card(
+              color: Colors.teal,
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const colblind()),
+                  );
+                },
+                splashColor: Color.fromARGB(255, 137, 136, 135),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(
+                        Icons.color_lens,
+                        size: 70.0,
+                        color: Colors.yellow[700],
+                      ),
+                      Text(
+                        "ตรวจโรคตาบอดสี",
+                        style: new TextStyle(
+                            fontSize: 12.0, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ),
-            Mymenu(
-              icon: Icons.window_outlined,
-              warna: Colors.green,
+            Card(
+              color: Colors.yellow,
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const quizsepcol(),
+                    ),
+                  );
+                },
+                splashColor: Colors.green[700],
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(
+                        Icons.warning_amber_outlined,
+                        size: 70.0,
+                        color: Colors.red,
+                      ),
+                      Text(
+                        "ตรวจโรคต้อกระจก",
+                        style: new TextStyle(
+                            fontSize: 12.0, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class Mymenu extends StatelessWidget {
-  Mymenu({this.icon, this.warna});
-
-  final IconData? icon;
-  final MaterialColor? warna;
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(8.0),
-      child: InkWell(
-        onTap: () {},
-        splashColor: Colors.green[700],
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Icon(
-                icon,
-                size: 70.0,
-                color: warna,
-              ),
-              Text("Home", style: new TextStyle(fontSize: 17.0)),
-              Text("Home", style: new TextStyle(fontSize: 17.0)),
-              Text("Home", style: new TextStyle(fontSize: 17.0)),
-              Text("Home", style: new TextStyle(fontSize: 17.0))
-            ],
-          ),
         ),
       ),
     );

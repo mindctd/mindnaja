@@ -1,5 +1,6 @@
 import 'package:eyetestapp/Screens/splash.dart';
 import 'package:eyetestapp/first.dart';
+import 'package:eyetestapp/howtouse.dart';
 import 'package:eyetestapp/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -25,19 +26,23 @@ class _MyHomePageState extends State<MyHomePage> {
   List widgetOption = [
     firstpage(),
     homemenu(),
-    Text('Setting'),
+    how(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: (Colors.green[300]),
       body: Center(
         child: widgetOption[currentIndedx],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.yellow,
+        selectedItemColor: Colors.brown,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Welcome'),
           BottomNavigationBarItem(icon: Icon(Icons.window), label: 'Menu!'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.question_mark), label: 'How to use app'),
         ],
         currentIndex: currentIndedx,
         onTap: (index) => setState(
@@ -45,7 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       appBar: AppBar(
-        title: Text("Uvision"),
+        title: Text(
+          "Uvision",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class firstpage extends StatelessWidget {
-  const firstpage({super.key});
+class how extends StatelessWidget {
+  const how({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,25 +21,25 @@ class firstpage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "ช่วงนี้รู้สึกสายตาไม่ดี มองเห็นอะไรก็เลือนลาง",
+                  "1.เลือกการทดสอบที่ท่านต้องการ",
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 Text(""),
                 Text(
-                  "สุขภาพสายตาไม่ค่อยดี จนอดสงสัยไม่ได้ว่า",
+                  "2.ทำตามข้อแนะนำในการทดสอบ",
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 Text(""),
                 Text(
-                  "เอ๊ะ ฉันแก่ขึ้น! แล้วความสามารถในการมองเห็นมันลดลงรึเปล่า?",
+                  "3.ทำแบบทดสอบให้ครบทุกข้อ",
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 Text(""),
                 Text(
-                  "ถ้ามีคำถามแบบนี้ขึ้นมาในหัวล่ะก็ ได้เวลาทดสอบแล้วล่ะ!",
+                  "4.ตรวจเช็กคะแนนที่ได้กับตารางเกณฑ์เพื่อทราบถึงความเสี่ยง",
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ),

@@ -16,12 +16,12 @@ class _splashState extends State<splash> {
   }
 
   _navigatetohome() async {
-    await Future.delayed(Duration(milliseconds: 4000), () {});
+    await Future.delayed(Duration(milliseconds: 5000), () {});
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
             builder: (context) => MyHomePage(
-                  title: 'GG',
+                  title: '',
                 )));
   }
 
@@ -32,16 +32,22 @@ class _splashState extends State<splash> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.blue,
-            ),
-            Container(
-              child: Text(
-                'Eyetest',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
+            Container(child: Image.asset('assets/logo.png'), width: 180),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Uvision",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+                Text(" "),
+                SizedBox(
+                  height: 20,
+                ),
+                CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
+                ),
+              ],
             ),
           ],
         ),
