@@ -14,7 +14,7 @@ class scored extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage("assets/eiei.jpg"), fit: BoxFit.cover),
           ),
-          child: Image.asset('assets/rain.jpg'),
+          child: Image.asset('assets/4.jpg'),
           width: double.infinity,
           height: double.infinity,
         ));
